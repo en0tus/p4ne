@@ -21,6 +21,7 @@ print(list(y1_list))
 print(list(y2_list))
 
 pyplot.plot(x_list,y1_list,label="Temperature")
+pyplot.plot(x_list,y2_list,label="Sun_Activity")
 pyplot.show()
 
 
