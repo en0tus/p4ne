@@ -17,7 +17,7 @@ x_list=list(map(getvalue, column_a))
 y1_list=list(map(getvalue, column_c))
 y2_list=list(map(getvalue, column_d))
 
-#print(list(x_list))
+print(list(x_list))
 #print(list(y1_list))
 #print(list(y2_list))
 
