@@ -14,8 +14,10 @@ def case_construction (str):
     m3 = re.match("^ ip address ([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+) ([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)", str)
     #    m1=re.match('^ ip address ((?:[0-255].){3}[0-255])',str)
     if m3:
-        print(m3.group(1))
-        return {"ip":IPv4Interface(str(m3.group(1)) + "/" + str(m3.group(2)))}
+#        print(m3.group(1))
+        ip_addr=m3.group(1)
+        net_mask=m3.group(2)
+        return {"ip":IPv4Interface(ip_addr) + "/" + net_mask}
 
     return ("UNCLASSIFIED",)
 
@@ -26,6 +28,7 @@ hosts = []
 for file in glob.glob('C:\\Users\\mn.danilin\\Downloads\\config_files\\cod-asw1_10.12.225.52.txt'):
     f=open(file)
     for iter_str in f:
+        print(iter_str)
         result = case_construction(iter_str)
         if "ip" in result:
             ipaddr.append(result)
